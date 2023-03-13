@@ -31,9 +31,8 @@ describe('Character', () => {
         };
         expect(error).toThrow(Error);
         expect(error).toThrow('Name must be 2-10 symbols!');
-        expect(()=> {}).not.toThrow(Error);
-        expect(()=> {}).not.toThrow('Name must be 2-10 symbols!');
-
+        expect(() => {}).not.toThrow(Error);
+        expect(() => {}).not.toThrow('Name must be 2-10 symbols!');
     });
 
     test('type test', () => {
