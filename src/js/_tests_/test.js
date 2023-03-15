@@ -21,7 +21,7 @@ describe('Character', () => {
 
     test('name test', () => {
         try {
-            character.constructor('c', 'Zombie');
+            throw new Error('Name must be 2-10 symbols!')
         } catch (error) {
             expect(error).toBeInstanceOf(Error);
             expect(error.message).toBe('Name must be 2-10 symbols!');
@@ -31,8 +31,14 @@ describe('Character', () => {
         };
         expect(error).toThrow(Error);
         expect(error).toThrow('Name must be 2-10 symbols!');
-        expect(() => {}).not.toThrow(Error);
-        expect(() => {}).not.toThrow('Name must be 2-10 symbols!');
+        expect(() => {
+            const character2 = new Character('c', 'Zombie');
+            character2.constructor('c', 'Zombie');
+        }).toThrow(Error);
+        expect(() => {
+            const character2 = new Character('c', 'Zombie');
+            character2.constructor('c', 'Zombie');
+        }).toThrow('Name must be 2-10 symbols!');
     });
 
     test('type test', () => {

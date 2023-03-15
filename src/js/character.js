@@ -1,6 +1,6 @@
 export default class Character {
     constructor(name, type) {
-        if (name.length > 2 || name.length < 10) {
+        if (name.length > 2 && name.length < 10) {
             this.name = name;
         } else {
             throw new Error('Name must be 2-10 symbols!');
