@@ -21,7 +21,7 @@ describe('Character', () => {
 
     test('name test', () => {
         try {
-            throw new Error('Name must be 2-10 symbols!')
+            throw new Error('Name must be 2-10 symbols!');
         } catch (error) {
             expect(error).toBeInstanceOf(Error);
             expect(error.message).toBe('Name must be 2-10 symbols!');
